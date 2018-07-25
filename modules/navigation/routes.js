@@ -4,6 +4,7 @@ import foo from '~modules/screens/foo'
 import bar from '~modules/screens/bar'
 import baz from '~modules/screens/baz'
 import modalScreen from '~modules/modals/modal'
+import anotherModalScreen from '~modules/modals/another-modal'
 
 
 console.log('baz', baz)
@@ -26,16 +27,19 @@ export const tabRoutes = {
 export const screenRoutes = {
     Foo: {
         screen: foo,
+        path: 'foo/:param',
         navigationOptions: {}
     },
     Bar: {
         screen: bar,
+        path: 'bar/:param',
         navigationOptions: {
             mode: 'modal'
         }
     },
     Baz: {
         screen: baz,
+        path: 'baz/:param',
         navigationOptions: {}
     }
 }
@@ -43,10 +47,9 @@ export const screenRoutes = {
 
 export const modalRoutes = {
     Modal: {
-        screen: modalScreen,
-        navigationOptions: {
-            mode: 'modal',
-            headerMode: 'none'
-        }
+        screen: modalScreen
+    },
+    AnotherModal: {
+        screen: anotherModalScreen
     }
 }

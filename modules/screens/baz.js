@@ -4,8 +4,6 @@ import styles from '~styles'
 
 import { withNavigation } from 'react-navigation'
 
-
-
 //@withNavigation
 class Baz extends Component {
 
@@ -30,6 +28,8 @@ class Baz extends Component {
     }
 }
 
-console.log('withNavigation(Baz)', withNavigation(Baz))
+//export default Baz
+
+
 
 export default withNavigation(Baz)

@@ -7,25 +7,29 @@ import {tabRoutes, screenRoutes, modalRoutes} from '~modules/navigation/routes'
 
 const headerButton = (dir, navigation) => {
 
-
     console.log('navigation', navigation)
     // RightDrawer is the parent drawer
-    // const drawNavigator = navigation.getChildNavigation('RightDrawer')
-    //
-    // const handleToggleDrawer = () => {
-    //
-    //     if (dir === 'left') {
-    //         drawNavigator.closeRightDrawer()
-    //         drawNavigator.toggleLeftDrawer()
-    //     }
-    //
-    //     if (dir === 'right') {
-    //         drawNavigator.closeLeftDrawer()
-    //         drawNavigator.toggleRightDrawer()
-    //     }
-    // }
+    const drawNavigator = navigation.getChildNavigation('RightDrawer')
 
-    const handleToggleDrawer = () => {}
+    const handleToggleDrawer = () => {
+
+        if ( ! drawNavigator) {
+            console.error('No drawNavigator!!!')
+            return false
+        }
+
+        if (dir === 'left') {
+            drawNavigator.closeRightDrawer()
+            drawNavigator.toggleLeftDrawer()
+        }
+
+        if (dir === 'right') {
+            drawNavigator.closeLeftDrawer()
+            drawNavigator.toggleRightDrawer()
+        }
+    }
+
+    ///const handleToggleDrawer = () => {}
 
     return (
         <TouchableWithoutFeedback onPress={handleToggleDrawer}>
@@ -54,7 +58,8 @@ const MainStack = createStackNavigator(
             headerLeft: headerButton('left', navigation),
             headerTitle: <Text>LOGO</Text>,
             headerRight: headerButton('right', navigation),
-        })
+        })//,
+        //path: 'main'
     }
 )
 
