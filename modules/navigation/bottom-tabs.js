@@ -9,6 +9,7 @@ const TabBarComponent = (props) => {
             navigation={{
                 ...props.navigation,
                 state: {
+                    ...props.navigation.state,
                     // filter unwanted routes from tab bar
                     routes: props.navigation.state.routes.filter(route => {
                         return (route.key in tabRoutes === true)
@@ -34,7 +35,7 @@ const BottomTabs = createBottomTabNavigator({
         tabBarVisible: true
     },
     tabBarOptions: {
-        activeTintColor: 'red',
+        activeTintColor: 'green',
         inactiveTintColor: 'grey'
     }
 })
