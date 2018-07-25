@@ -2,6 +2,7 @@ import home from '~modules/screens/home'
 import settings from '~modules/screens/settings'
 import foo from '~modules/screens/foo'
 import bar from '~modules/screens/bar'
+import baz from '~modules/screens/baz'
 
 export const tabRoutes = {
     Home: {
@@ -28,7 +29,7 @@ export const screenRoutes = {
         navigationOptions: {}
     },
     Baz: {
-        screen: bar,
+        screen: baz,
         navigationOptions: {}
     }
 }

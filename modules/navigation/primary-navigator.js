@@ -33,7 +33,7 @@ const headerButton = (dir, navigation) => {
 
 const AppNavigator = createStackNavigator(
     {
-        LeftDrawer: LeftDrawer,
+        LeftDrawer,
         ...tabRoutes,
         ...screenRoutes
     },

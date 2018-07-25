@@ -11,7 +11,7 @@ const TabBarComponent = (props) => {
                 state: {
                     // filter unwanted routes from tab bar
                     routes: props.navigation.state.routes.filter(route => {
-                        return route.routeName !== 'Foo' && route.routeName !== 'Bar' && route.routeName !== 'Baz'
+                        return (route.key in tabRoutes === true)
                     })
                 }
             }}

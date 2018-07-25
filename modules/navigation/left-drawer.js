@@ -15,7 +15,7 @@ class LeftMenuContent extends PureComponent {
                     <Text>LEFT DRAWER</Text>
                     <Button title={'NAVIGATE to foo'} onPress={() => navigate('Foo')} />
                     <Button title={'NAVIGATE to bar'} onPress={() => navigate('Bar')} />
-                    <Button title={'NAVIGATE to baz'} onPress={() => navigate('Baz')} />
+                    <Button title={'PUSH to baz'} onPress={() => navigate('Baz')} />
                 </ScrollView>
             </View>
         )
