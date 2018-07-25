@@ -27,7 +27,7 @@ const BottomTabs = createBottomTabNavigator({
     //router config
     initialRouteName: 'Home',
 
-    // !important - DON'T USE ORDER. It will break screen routing
+    // !!! important - important - DON'T USE 'order'. It will break screen routing
     //order: ['Settings', 'Home'],
     //navigation for complete tab navigator
     navigationOptions: {

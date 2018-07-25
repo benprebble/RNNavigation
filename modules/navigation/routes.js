@@ -42,7 +42,7 @@ export const screenRoutes = {
 
 
 export const modalRoutes = {
-    MyModal: {
+    Modal: {
         screen: modalScreen,
         navigationOptions: {
             mode: 'modal',

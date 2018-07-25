@@ -43,6 +43,8 @@ const MainStack = createStackNavigator(
         ...screenRoutes
     },
     {
+        // !!! important - DON'T USE 'initialRouteName'. It will break tab routing
+        //initialRouteName: 'Home',
         navigationOptions: ({navigation}) => ({
             headerMode: 'float',
             backgroundColor: '#c0c0c0',
