@@ -1,24 +1,15 @@
-import React, {Component} from 'react'
-import {
-    View,
-    Text,
-    Button
-} from 'react-native'
+import React, {PureComponent} from 'react'
+import {View, Text, Button} from 'react-native'
 import styles from '~styles'
 
-export default class Settings extends Component {
-
-    constructor (props) {
-        super (props)
-    }
-
+export default class Settings extends PureComponent {
     render () {
-
-        console.log(this.props)
+        const {navigate} = this.props.navigation
         return (
             <View style={styles.container}>
                 <Text>Settings</Text>
-                <Button title={'Go to foo'} onPress={() => this.props.navigation.navigate('Foo')} />
+                <Button title={'NAVIGATE to foo'} onPress={() => navigate('Foo')} />
+                <Button title={'NAVIGATE to bar'} onPress={() => navigate('Bar')} />
             </View>
         )
     }

@@ -15,24 +15,20 @@ export const tabRoutes = {
         navigationOptions: {
             tabBarLabel: 'Settings'
         }
-    },
-    // Foo: {
-    //     screen: foo,
-    //     navigationOptions: {
-    //         tabBarLabel: 'FOOX'
-    //     }
-    // }
+    }
 }
 
 export const screenRoutes = {
     Foo: {
         screen: foo,
-        navigationOptions: {
-        }
+        navigationOptions: {}
     },
     Bar: {
         screen: bar,
-        navigationOptions: {
-        }
+        navigationOptions: {}
+    },
+    Baz: {
+        screen: bar,
+        navigationOptions: {}
     }
 }

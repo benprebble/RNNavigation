@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import {createDrawerNavigator, DrawerActions} from 'react-navigation'
-import {ScrollView, Text, View} from 'react-native'
+import {ScrollView, View, Text, Button} from 'react-native'
 import BottomTabs from './bottom-tabs'
 import {screenRoutes, tabRoutes} from '~modules/navigation/routes'
 import styles from '~styles'
@@ -12,6 +12,8 @@ class RightMenuContent extends PureComponent {
             <View style={styles.container}>
                 <ScrollView>
                     <Text>RIGHT DRAWER</Text>
+                    <Button title={'NAVIGATE to foo'} onPress={() => navigate('Foo')} />
+                    <Button title={'NAVIGATE to bar'} onPress={() => navigate('Bar')} />
                 </ScrollView>
             </View>
         )

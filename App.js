@@ -1,11 +1,13 @@
 import React, {Component} from 'react'
+import {View} from 'react-native'
 import AppNavigator from '~modules/navigation/primary-navigator'
-import Tabs from '~modules/navigation/bottom-tabs'
 
 export default class App extends Component {
     render() {
         return (
-            <AppNavigator />
+            <View style={{flex: 1}}>
+                <AppNavigator />
+            </View>
         )
     }
 }
