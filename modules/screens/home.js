@@ -15,8 +15,9 @@ export default class Home extends PureComponent {
                 <Text>Home</Text>
                 <Button title={'NAVIGATE to foo'} onPress={() => navigate('Foo')} />
                 <Button title={'NAVIGATE to bar'} onPress={() => navigate('Bar')} />
+                <Button title={'PUSH to bar'} onPress={() => push('Bar')} />
                 <Button title={'PUSH to baz'} onPress={() => push('Baz')} />
-                <Button title={'REPLACE to baz'} onPress={() => replace('Baz')} />
+                <Button title={'REPLACE baz'} onPress={() => replace('Baz')} />
 
                 <Button title='Show fullscreen modal' onPress={() => navigate('Modal')} />
 

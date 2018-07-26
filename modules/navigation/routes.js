@@ -34,13 +34,17 @@ export const screenRoutes = {
         screen: bar,
         path: 'bar/:param',
         navigationOptions: {
-            mode: 'modal'
+            // hide header and tabs
+            // header: null, // only works on push WTF!?!?
+            // tabBarVisible: false
         }
     },
     Baz: {
         screen: baz,
         path: 'baz/:param',
-        navigationOptions: {}
+        navigationOptions: {
+            //tabBarVisible: false
+        }
     }
 }
 

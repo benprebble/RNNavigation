@@ -9,12 +9,19 @@ const headerButton = (dir, navigation) => {
 
     console.log('navigation', navigation)
     // RightDrawer is the parent drawer
-    const drawNavigator = navigation.getChildNavigation('RightDrawer')
+
+    let drawNavigator
+
+    // if (navigation.getChildNavigation) {
+    //
+    //     drawNavigator = navigation.getChildNavigation('RightDrawer')
+    //
+    // }
 
     const handleToggleDrawer = () => {
 
         if ( ! drawNavigator) {
-            console.error('No drawNavigator!!!')
+            console.warn('No drawNavigator!!!')
             return false
         }
 
@@ -47,7 +54,7 @@ const MainStack = createStackNavigator(
         ...screenRoutes
     },
     {
-        // !!! important - DON'T USE 'initialRouteName'. It will break tab routing
+        // !!! important - DON'T USE 'initialRouteName'. It will break tab routing, instead this is set in bottom-tabs
         //initialRouteName: 'Home',
         navigationOptions: ({navigation}) => ({
             headerMode: 'float',
