@@ -43,7 +43,7 @@ export const screenRoutes = {
         screen: baz,
         path: 'baz/:param',
         navigationOptions: {
-            //tabBarVisible: false
+            tabBarVisible: true
         }
     }
 }

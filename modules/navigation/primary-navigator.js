@@ -1,9 +1,10 @@
 import React from 'react'
-import {TouchableWithoutFeedback, View, Text, Button} from 'react-native'
+import {TouchableWithoutFeedback, View, Text, Button, Animated, Easing} from 'react-native'
 import LeftDrawer from '~modules/navigation/left-drawer'
 import {createStackNavigator} from 'react-navigation'
 import {tabRoutes, screenRoutes, modalRoutes} from '~modules/navigation/routes'
 
+import TransitionConfiguration from '~modules/effects'
 
 const headerButton = (dir, navigation) => {
 
@@ -47,6 +48,8 @@ const headerButton = (dir, navigation) => {
     )
 }
 
+
+
 const MainStack = createStackNavigator(
     {
         LeftDrawer,
@@ -56,6 +59,14 @@ const MainStack = createStackNavigator(
     {
         // !!! important - DON'T USE 'initialRouteName'. It will break tab routing, instead this is set in bottom-tabs
         //initialRouteName: 'Home',
+        //transitionConfig: TransitionConfiguration,
+        transitionConfig : () => ({
+            transitionSpec: {
+                duration: 0,
+                timing: Animated.timing,
+                easing: Easing.ease(1000),
+            },
+        }),
         navigationOptions: ({navigation}) => ({
             headerMode: 'float',
             backgroundColor: '#c0c0c0',

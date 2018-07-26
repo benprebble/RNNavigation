@@ -1,12 +1,12 @@
 import React, {Component} from 'react'
 import {View} from 'react-native'
-import AppNavigator from '~modules/navigation/primary-navigator'
+import RootNavigationStack from '~modules/navigation/primary-navigator-v2'
 
 export default class App extends Component {
     render() {
         return (
             <View style={{flex: 1}}>
-                <AppNavigator />
+                <RootNavigationStack />
             </View>
         )
     }
