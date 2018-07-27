@@ -47,9 +47,8 @@ const MainStackNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerMode: 'float',
-            backgroundColor: '#c0c0c0',
             headerStyle: {
-                backgroundColor: 'red'
+                backgroundColor: '#A0A0A0'
             },
             headerLeft: headerButton('left', navigation),
             headerTitle: <Text>LOGO</Text>,

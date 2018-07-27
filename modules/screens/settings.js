@@ -9,7 +9,7 @@ export default class Settings extends PureComponent {
 
         return (
             <View style={styles.container}>
-                <Text>Settings</Text>
+                <Text style={styles.h1}>Settings</Text>
                 <Button title={'NAVIGATE to foo'} onPress={() => navigate('Foo')} />
                 <Button title={'NAVIGATE to bar'} onPress={() => navigate('Bar')} />
             </View>
