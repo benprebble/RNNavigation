@@ -4,7 +4,9 @@ import styles from '~styles'
 
 export default class Settings extends PureComponent {
     render () {
+
         const {navigate} = this.props.navigation
+
         return (
             <View style={styles.container}>
                 <Text>Settings</Text>

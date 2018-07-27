@@ -6,9 +6,6 @@ import Baz from '~modules/screens/baz'
 import ModalScreen from '~modules/modals/modal'
 import AnotherModalScreen from '~modules/modals/another-modal'
 
-
-//console.log('baz', baz)
-
 export const tabRoutes = {
     Home: {
         screen: Home,
@@ -25,18 +22,6 @@ export const tabRoutes = {
 }
 
 export const screenRoutes = {
-    Home: {
-        screen: Home,
-        navigationOptions: {
-            tabBarLabel: 'Home'
-        }
-    },
-    Settings: {
-        screen: Settings,
-        navigationOptions: {
-            tabBarLabel: 'Settings'
-        }
-    },
     Foo: {
         screen: Foo,
         path: 'foo/:param',
@@ -47,15 +32,16 @@ export const screenRoutes = {
         path: 'bar/:param',
         navigationOptions: {
             // hide header and tabs
-            // header: null, // only works on push WTF!?!?
-            // tabBarVisible: false
+            header: null,
+            tabBarVisible: false
         }
     },
     Baz: {
         screen: Baz,
         path: 'baz/:param',
         navigationOptions: {
-            //tabBarVisible: false
+            // hide tabs
+            tabBarVisible: false
         }
     }
 }

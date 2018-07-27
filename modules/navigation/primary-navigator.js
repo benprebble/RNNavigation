@@ -1,21 +1,14 @@
 import React from 'react'
-import {TouchableWithoutFeedback, View, Text, Button} from 'react-native'
-import LeftDrawer from '~modules/navigation/left-drawer'
+import {TouchableWithoutFeedback, View, Text} from 'react-native'
+import LeftDrawerNavigator from '~modules/navigation/left-drawer-navigator'
 import {createStackNavigator} from 'react-navigation'
 import {tabRoutes, screenRoutes, modalRoutes} from '~modules/navigation/routes'
 
-
 const headerButton = (dir, navigation) => {
 
-    console.log('navigation', navigation)
-    // RightDrawer is the parent drawer
-
     let drawNavigator
-
     if (navigation.getChildNavigation) {
-
         drawNavigator = navigation.getChildNavigation('RightDrawer')
-
     }
 
     const handleToggleDrawer = () => {
@@ -36,8 +29,6 @@ const headerButton = (dir, navigation) => {
         }
     }
 
-    ///const handleToggleDrawer = () => {}
-
     return (
         <TouchableWithoutFeedback onPress={handleToggleDrawer}>
             <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingLeft: 5, paddingRight: 5}}>
@@ -47,15 +38,13 @@ const headerButton = (dir, navigation) => {
     )
 }
 
-const MainStack = createStackNavigator(
+const MainStackNavigator = createStackNavigator(
     {
-        LeftDrawer,
+        LeftDrawerNavigator,
         ...tabRoutes,
         ...screenRoutes
     },
     {
-        // !!! important - DON'T USE 'initialRouteName'. It will break tab routing, instead this is set in bottom-tabs
-        //initialRouteName: 'Home',
         navigationOptions: ({navigation}) => ({
             headerMode: 'float',
             backgroundColor: '#c0c0c0',
@@ -65,14 +54,13 @@ const MainStack = createStackNavigator(
             headerLeft: headerButton('left', navigation),
             headerTitle: <Text>LOGO</Text>,
             headerRight: headerButton('right', navigation),
-        })//,
-        //path: 'main'
+        })
     }
 )
 
 const AppNavigator = createStackNavigator(
     {
-        MainStack,
+        MainStackNavigator,
         ...modalRoutes
     },
     {

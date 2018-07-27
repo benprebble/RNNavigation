@@ -1,8 +1,8 @@
 import React, {PureComponent} from 'react'
 import {createDrawerNavigator, DrawerActions} from 'react-navigation'
 import {ScrollView, View, Text, Button} from 'react-native'
-import RightDrawer from './right-drawer'
-import BottomTabs from './bottom-tabs'
+import RightDrawerNavigator from './right-drawer-navigator'
+import BottomTabNavigator from './bottom-tab-navigator'
 import {screenRoutes, tabRoutes} from '~modules/navigation/routes'
 import styles from '~styles'
 
@@ -22,10 +22,10 @@ class LeftMenuContent extends PureComponent {
     }
 }
 
-const LeftDrawer = createDrawerNavigator(
+const LeftDrawerNavigator = createDrawerNavigator(
     {
-        RightDrawer,
-        BottomTabs
+        RightDrawerNavigator,
+        BottomTabNavigator
     },
     {
         contentComponent: LeftMenuContent,
@@ -36,4 +36,4 @@ const LeftDrawer = createDrawerNavigator(
     }
 )
 
-export default LeftDrawer
+export default LeftDrawerNavigator

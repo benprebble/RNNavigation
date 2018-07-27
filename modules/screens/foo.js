@@ -13,7 +13,7 @@ export default class Foo extends Component {
         return (
             <View style={styles.container}>
                 <BackButton />
-                <Text>Foo</Text>
+                <Text style={styles.h1}>Foo</Text>
                 <TextInput
                     autoFocus={true}
                     placeholder='Email address'

@@ -1,10 +1,21 @@
 import {StyleSheet} from 'react-native'
 
 export default styles = StyleSheet.create({
+    h1: {
+        fontSize: 30,
+        paddingTop: 30,
+        paddingBottom: 30
+    },
+    italic: {
+        fontStyle: 'italic'
+    },
+    bold: {
+        fontWeight: 'bold'
+    },
     container: {
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        paddingTop: 50,
+        alignItems: 'center'
     },
     navItemStyle: {
         padding: 10

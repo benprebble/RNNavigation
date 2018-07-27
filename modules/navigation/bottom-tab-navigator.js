@@ -6,7 +6,7 @@ import {screenRoutes, tabRoutes} from '~modules/navigation/routes'
 const HomeTab = createStackNavigator(
     {
         ...tabRoutes,
-        ...screenRoutes,
+        ...screenRoutes, // make tabs available on screen routes
     },
     {
         navigationOptions: {
@@ -25,7 +25,6 @@ const SettingsTab = createStackNavigator(
             header: null
         }
     }
-
 )
 
 const TabBarComponent = (props) => {
@@ -46,25 +45,19 @@ const TabBarComponent = (props) => {
     )
 }
 
-const BottomTabs = createBottomTabNavigator({
-    //...tabRoutes,
+const BottomTabNavigator = createBottomTabNavigator({
+    ...tabRoutes, // enables us to set initialRouteName to 'Home'
     ...screenRoutes,
-
     HomeTab,
     SettingsTab
 }, {
-    tabBarComponent: props => (<TabBarComponent
-        {...props}
-       // tabRoutes={tabRoutes}
-    />),
     //router config
+    tabBarComponent: props => (<TabBarComponent {...props} />),
     initialRouteName: 'Home',
-
-    // !!! important - important - DON'T USE 'order'. It will break screen routing
-    //order: ['Settings', 'Home'],
-    //navigation for complete tab navigator
+    // navigation for complete tab navigator
     navigationOptions: {
-        tabBarVisible: true
+        tabBarVisible: true,
+        header: null
     },
     tabBarOptions: {
         activeTintColor: 'green',
@@ -72,4 +65,4 @@ const BottomTabs = createBottomTabNavigator({
     }
 })
 
-export default BottomTabs
+export default BottomTabNavigator
