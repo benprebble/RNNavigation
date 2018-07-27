@@ -18,7 +18,7 @@ export default class Baz extends Component {
                 <Text style={styles.h1}>Baz</Text>
                 <Text>Tabs <Text style={[styles.bold, styles.italic]}>should</Text> be hidden on this screen</Text>
                 <Button title={'POP baz'} onPress={() => pop()} />
-                <Button title={'RESET baz'} onPress={() => reset()} />
+                {/*<Button title={'RESET baz'} onPress={() => reset()} />*/}
                 <Button title={'NAVIGATE to home'} onPress={() => navigate('Home')} />
                 <Button title='Show another modal' onPress={() => navigate('AnotherModal')} />
             </View>

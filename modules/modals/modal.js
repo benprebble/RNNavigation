@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {View, Text, Button} from 'react-native'
 
-class ModalScreen extends React.Component {
+class ModalScreen extends Component {
     render() {
         return (
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center'}}>

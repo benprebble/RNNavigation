@@ -8,7 +8,7 @@ const headerButton = (dir, navigation) => {
 
     let drawNavigator
     if (navigation.getChildNavigation) {
-        drawNavigator = navigation.getChildNavigation('RightDrawer')
+        drawNavigator = navigation.getChildNavigation('RightDrawerNavigator')
     }
 
     const handleToggleDrawer = () => {
