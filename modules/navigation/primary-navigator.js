@@ -12,11 +12,11 @@ const headerButton = (dir, navigation) => {
 
     let drawNavigator
 
-    // if (navigation.getChildNavigation) {
-    //
-    //     drawNavigator = navigation.getChildNavigation('RightDrawer')
-    //
-    // }
+    if (navigation.getChildNavigation) {
+
+        drawNavigator = navigation.getChildNavigation('RightDrawer')
+
+    }
 
     const handleToggleDrawer = () => {
 
@@ -80,27 +80,5 @@ const AppNavigator = createStackNavigator(
         headerMode: 'none'
     }
 )
-
-/*
-const AppNavigator = createStackNavigator(
-    {
-        LeftDrawer,
-        ...tabRoutes,
-        ...screenRoutes
-    },
-    {
-
-        navigationOptions: ({navigation}) => ({
-            headerMode: 'float',
-            backgroundColor: '#c0c0c0',
-            headerStyle: {
-                backgroundColor: 'red'
-            },
-            headerLeft: headerButton('left', navigation),
-            headerTitle: <Text>LOGO</Text>,
-            headerRight: headerButton('right', navigation),
-        })
-    }
-)*/
 
 export default AppNavigator

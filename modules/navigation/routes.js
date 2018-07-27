@@ -1,23 +1,23 @@
-import home from '~modules/screens/home'
-import settings from '~modules/screens/settings'
-import foo from '~modules/screens/foo'
-import bar from '~modules/screens/bar'
-import baz from '~modules/screens/baz'
-import modalScreen from '~modules/modals/modal'
-import anotherModalScreen from '~modules/modals/another-modal'
+import Home from '~modules/screens/home'
+import Settings from '~modules/screens/settings'
+import Foo from '~modules/screens/foo'
+import Bar from '~modules/screens/bar'
+import Baz from '~modules/screens/baz'
+import ModalScreen from '~modules/modals/modal'
+import AnotherModalScreen from '~modules/modals/another-modal'
 
 
-console.log('baz', baz)
+//console.log('baz', baz)
 
 export const tabRoutes = {
     Home: {
-        screen: home,
+        screen: Home,
         navigationOptions: {
             tabBarLabel: 'Home'
         }
     },
     Settings: {
-        screen: settings,
+        screen: Settings,
         navigationOptions: {
             tabBarLabel: 'Settings'
         }
@@ -25,13 +25,25 @@ export const tabRoutes = {
 }
 
 export const screenRoutes = {
+    Home: {
+        screen: Home,
+        navigationOptions: {
+            tabBarLabel: 'Home'
+        }
+    },
+    Settings: {
+        screen: Settings,
+        navigationOptions: {
+            tabBarLabel: 'Settings'
+        }
+    },
     Foo: {
-        screen: foo,
+        screen: Foo,
         path: 'foo/:param',
         navigationOptions: {}
     },
     Bar: {
-        screen: bar,
+        screen: Bar,
         path: 'bar/:param',
         navigationOptions: {
             // hide header and tabs
@@ -40,7 +52,7 @@ export const screenRoutes = {
         }
     },
     Baz: {
-        screen: baz,
+        screen: Baz,
         path: 'baz/:param',
         navigationOptions: {
             //tabBarVisible: false
@@ -51,9 +63,9 @@ export const screenRoutes = {
 
 export const modalRoutes = {
     Modal: {
-        screen: modalScreen
+        screen: ModalScreen
     },
     AnotherModal: {
-        screen: anotherModalScreen
+        screen: AnotherModalScreen
     }
 }

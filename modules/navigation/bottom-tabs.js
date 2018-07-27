@@ -1,6 +1,32 @@
 import React from 'react'
+import {createStackNavigator} from 'react-navigation'
 import {createBottomTabNavigator, BottomTabBar} from 'react-navigation-tabs'
 import {screenRoutes, tabRoutes} from '~modules/navigation/routes'
+
+const HomeTab = createStackNavigator(
+    {
+        ...tabRoutes,
+        ...screenRoutes,
+    },
+    {
+        navigationOptions: {
+            header: null
+        }
+    }
+)
+
+const SettingsTab = createStackNavigator(
+    {
+        ...tabRoutes,
+        ...screenRoutes,
+    },
+    {
+        navigationOptions: {
+            header: null
+        }
+    }
+
+)
 
 const TabBarComponent = (props) => {
     return (
@@ -21,10 +47,16 @@ const TabBarComponent = (props) => {
 }
 
 const BottomTabs = createBottomTabNavigator({
-    ...tabRoutes,
-    ...screenRoutes
+    //...tabRoutes,
+    ...screenRoutes,
+
+    HomeTab,
+    SettingsTab
 }, {
-    tabBarComponent: props => (<TabBarComponent {...props} />),
+    tabBarComponent: props => (<TabBarComponent
+        {...props}
+       // tabRoutes={tabRoutes}
+    />),
     //router config
     initialRouteName: 'Home',
 
